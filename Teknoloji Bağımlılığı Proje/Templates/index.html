@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknoloji Bağımlılığı</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Teknolojiyle Aramızdaki İlişkiyi Anlamak</h1>
+            <p><strong>Teknoloji hayatımızı kolaylaştırır ama kontrol edilmediğinde bizi ele geçirebilir.</strong></p>
+        </header>
+
+        <section>
+            <h2>Teknoloji Bağımlılığı Nedir?</h2>
+            <p>Teknoloji bağımlılığı, hayatımızda dijital araçlara fazla zaman ayırma durumudur. Örneğin:</p>
+            <ul>
+                <li>Telefon veya bilgisayar başında saatler geçirmek</li>
+                <li>Sosyal medya bildirimlerini sürekli kontrol etmek</li>
+                <li>Oyunlar veya videolarla gerçek hayatı unutmak</li>
+            </ul>
+        </section>
+
+        <section class="widget">
+            <h2>Bağımlılık Belirtileri</h2>
+            <ul>
+                <li><strong>Telefonunuz olmadan huzursuz musunuz?</strong></li>
+                <li>Yüz yüze iletişim yerine <u>sosyal medya</u> mı tercih ediyorsunuz?</li>
+            </ul>
+        </section>
+
+
+        <section class="slider">
+            <h2>Teknolojik Gelişmeler</h2>
+            <div class="slides">
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x400?text=Gelişme+1" alt="Gelişme 1">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x400?text=Gelişme+2" alt="Gelişme 2">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x400?text=Gelişme+3" alt="Gelişme 3">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-form">
+            <h2>Bizimle İletişime Geçin</h2>
+            <form action="#">
+                <input type="text" placeholder="Adınız" required>
+                <input type="email" placeholder="E-posta Adresiniz" required>
+                <textarea placeholder="Mesajınızı buraya yazın" required></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+        </section>
+
+        <!-- New Widget: Social Media Links -->
+        <section class="social-media">
+            <h2>Sosyal Medyada Bizi Takip Edin</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+        </section>
+
+
+        <section class="technology-news">
+            <h2>Teknoloji Haberleri</h2>
+            <div id="news-container">
+
+                {% for entry in feed.entries %}
+                    <div class="news-item">
+                        <h3><a href="{{ entry.link }}" target="_blank">{{ entry.title }}</a></h3>
+                        <p>{{ entry.summary }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
